@@ -1,0 +1,57 @@
+{
+  "name": "Causal Discovery",
+  "n_gpu": 1,
+  "arch": {
+    "type": "CausalInsight",
+    "args": {
+      "model_type": "cnn",
+      "hidden_dim": 512,
+      "lstm_hidden_dim": 512,
+      "kernel_size": 5
+    }
+  },
+  "data_loader": {
+    "type": "TimeseriesDataLoader",
+    "args":{
+      "batch_size": 128,
+      "time_step": 32,
+      "output_window": 31,
+      "feature_dim": 1,
+      "output_dim": 1,
+      "shuffle": true,
+      "validation_split": 0.01,
+      "num_workers": 2
+    }
+  },
+  "optimizer": {
+    "type": "Adam",
+    "args":{
+      "lr": 0.001,
+      "weight_decay": 0,
+      "amsgrad": true
+    }
+  },
+  "loss": "mse_loss",
+  "metrics": [
+    "mse_loss"
+  ],
+  "lr_scheduler": {
+    "type": "StepLR",
+    "args":{
+      "step_size": 30,
+      "gamma": 0.1
+    }
+  },
+  "trainer": {
+    "epochs": 20,
+    "save_dir": "saved/",
+    "save_freq": 1,
+    "save_period": 1,
+    "verbosity": 2,
+    "monitor": "min val_loss",
+    "early_stop": 10,
+    "tensorboard": true,
+    "mnt_metric": "val_loss",
+    "mnt_mode": "min"
+  }
+}
