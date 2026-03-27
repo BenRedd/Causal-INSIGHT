@@ -4,7 +4,7 @@
 
 ## 📄 Paper
 
-- arXiv: [TODO]: Add link 
+- arXiv: https://arxiv.org/abs/2603.25473
 - Accepted at **IEEE International Joint Conference on Neural Networks (IJCNN), 2026**
 
 ---
@@ -262,10 +262,17 @@ After updating the config file, simply rerun the training or inference script to
 
 If you use this code, please cite:
 
-[TODO:] Add citation
-
 ```bibtex
-
+@misc{redden2026causalinsight,
+      title={Causal-INSIGHT: Probing Temporal Models to Extract Causal Structure}, 
+      author={Benjamin Redden and Hui Wang and Shuyan Li},
+      year={2026},
+      eprint={2603.25473},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      note={Accepted at IJCNN 2026},
+      url={https://arxiv.org/abs/2603.25473}, 
+}
 ```
 
 ---
